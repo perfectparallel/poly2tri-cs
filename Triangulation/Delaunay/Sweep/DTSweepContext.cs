@@ -170,8 +170,8 @@ namespace Poly2Tri {
 
 			double deltaX = ALPHA * (xmax - xmin);
 			double deltaY = ALPHA * (ymax - ymin);
-			TriangulationPoint p1 = new TriangulationPoint(xmax + deltaX, ymin - deltaY);
-			TriangulationPoint p2 = new TriangulationPoint(xmin - deltaX, ymin - deltaY);
+			TriangulationPoint p1 = new TriangulationPoint(xmax + deltaX, ymin - deltaY, -1);
+			TriangulationPoint p2 = new TriangulationPoint(xmin - deltaX, ymin - deltaY, -1);
 
 			Head = p1;
 			Tail = p2;

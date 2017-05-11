@@ -56,7 +56,7 @@ namespace Poly2Tri {
 					radius = radius < scale / 10 ? scale / 10 : radius;
 				} while (radius < scale / 10 || radius > scale / 2);
 				point = new PolygonPoint(radius * Math.Cos((PI_2 * i) / vertexCount),
-										  radius * Math.Sin((PI_2 * i) / vertexCount));
+										  radius * Math.Sin((PI_2 * i) / vertexCount), i);
 				points[i] = point;
 			}
 			return new Polygon(points);
@@ -75,7 +75,7 @@ namespace Poly2Tri {
 					radius = radius < scale / 10 ? scale / 10 : radius;
 				} while (radius < scale / 10 || radius > scale / 2);
 				point = new PolygonPoint(radius * Math.Cos((PI_2 * i) / vertexCount),
-										  radius * Math.Sin((PI_2 * i) / vertexCount));
+										  radius * Math.Sin((PI_2 * i) / vertexCount), i);
 				points[i] = point;
 			}
 			return new Polygon(points);

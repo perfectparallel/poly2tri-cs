@@ -32,17 +32,26 @@
 using System.Collections.Generic;
 
 namespace Poly2Tri {
+
 	public class TriangulationPoint {
+
+		// This point was an inserted index.
+		public const int INSERTED_INDEX = -1;
+
+		// This point is not a valid index.
+		public const int INVALID_INDEX = -2;
+		
 		// List of edges this point constitutes an upper ending point (CDT)
 		public List<DTSweepConstraint> Edges { get; private set; }
 
-		public TriangulationPoint( double x, double y ) { X=x; Y=y; }
+		public TriangulationPoint( double x, double y, int index = INSERTED_INDEX) { X=x; Y=y; Index = index; }
 
 		public override string ToString() {
 			return "[" + X + "," + Y + "]";
 		}
 
 		public double X,Y;
+		public int Index;
 		public float Xf { get { return (float)X; } set { X=value; } }
 		public float Yf { get { return (float)Y; } set { Y=value; } }
 
